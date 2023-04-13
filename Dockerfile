@@ -35,9 +35,12 @@ RUN apt-get update --fix-missing && apt-get install -y \
 WORKDIR /work
 
 COPY requirements.txt .
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 RUN python -m spacy download en_core_web_sm
+RUN wget https://s3-us-west-2.amazonaws.com/ai2-s2-research/scibert/pytorch_models/scibert_scivocab_uncased.tar \
+&& tar -xvf scibert_scivocab_uncased.tar
 
 COPY data/ data/
 COPY scibert scibert/
