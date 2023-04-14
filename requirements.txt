@@ -1,3 +1,4 @@
 -e git+https://github.com/ibeltagy/allennlp@fp16_and_others#egg=allennlp
 jsonlines
 lxml
+overrides==3.1.0
