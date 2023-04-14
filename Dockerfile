@@ -47,4 +47,6 @@ COPY scibert scibert/
 COPY scripts/ scripts/
 COPY allennlp_config allennlp_config
 
+RUN mkdir results/
+
 CMD ["/bin/bash"]
